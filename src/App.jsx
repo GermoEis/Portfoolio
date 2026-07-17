@@ -1,37 +1,42 @@
 import {
-  AppWindow,
-  ArrowDown,
   ArrowRight,
+  ArrowUpRight,
+  Boxes,
   CheckCircle2,
   Database,
   FileCheck2,
   GraduationCap,
   Mail,
-  Plug,
-  Settings2,
+  Recycle,
+  Scissors,
+  UserCheck,
   Workflow,
 } from "lucide-react";
+import FeaturedProject from "./components/FeaturedProject.jsx";
 import ProjectCard from "./components/ProjectCard.jsx";
-import SectionHeader from "./components/SectionHeader.jsx";
 import ServiceCard from "./components/ServiceCard.jsx";
 import { projects } from "./data/projects.js";
 
-const approachSteps = [
+const approachPrinciples = [
   {
-    title: "Kaardistan praeguse töö",
-    text: "Vaatan läbi, kuidas protsess täna käib, kus kulub enim aega ning millised erandid vajavad inimese otsust.",
+    icon: Scissors,
+    title: "Ehitan ainult vajaliku",
+    text: "Automatiseerin selle osa, mis päriselt aega võtab. Mugavad lisad jäävad ootele, kuni neid päriselt vaja on.",
   },
   {
-    title: "Piiran lahenduse ulatuse",
-    text: "Selgitan välja tegeliku vajaduse ja automatiseerin ainult selle osa, mis päriselt aega võtab. Mugavad lisad võivad oodata.",
+    icon: Recycle,
+    title: "Automatiseerin korduva töö",
+    text: "Käsitsi tehtavad kordused — kopeerimine, sisestamine, failide liigutamine — panen ühte selgesse töövoogu.",
   },
   {
-    title: "Ehitan olemasoleva ümber",
-    text: "Kasutan võimalusel juba kasutusel olevaid töövahendeid ning valin väikseima tehnilise lahenduse, mis põhiülesande ära teeb.",
+    icon: Boxes,
+    title: "Kasutan olemasolevaid vahendeid",
+    text: "Enne uue süsteemi ehitamist vaatan, mida juba kasutatakse, ja valin väikseima lahenduse, mis töö ära teeb.",
   },
   {
-    title: "Testin ja jätan kontrollkoha",
-    text: "Proovin lahendust päris tööjuhtumitega. Ebaselged tulemused jäävad inimese kinnitada ning täiendused sünnivad tegelikust kasutusest.",
+    icon: UserCheck,
+    title: "Ebaselge jääb inimesele",
+    text: "Kindlad juhtumid liiguvad automaatselt edasi, ebaselged tulemused jäävad selgelt inimesele kinnitada.",
   },
 ];
 
@@ -40,29 +45,22 @@ const services = [
     icon: Workflow,
     index: "01",
     title: "Automatiseerimine ja failitöö",
-    text: "Seon korduvad sammud üheks arusaadavaks töövooks, et vähendada käsitsi sisestamist, kopeerimist ja failide liigutamist.",
-    items: ["Korduvad tööetapid", "Excel, PDF ja XML", "Failide ja kaustade liikumine"],
+    text: "Seon korduvad sammud üheks arusaadavaks töövooks — käsitsi sisestamine, kopeerimine ja failide liigutamine kaovad taustale.",
+    items: ["Korduvad tööetapid", "Excel, PDF ja XML", "Failide ja kaustade liikumine", "Pythoni tööriistad"],
   },
   {
     icon: Database,
     index: "02",
     title: "Andmed ja kontroll",
-    text: "Korrastan sisendandmed, võrdlen neid reeglitega ning toon vead ja erandid selgelt välja.",
-    items: ["SQL ja PostgreSQL", "Andmete valideerimine", "Kontrollitavad uuendused"],
+    text: "Korrastan sisendandmed, võrdlen neid reeglitega ning toon vead ja erandid selgelt välja — ka läbi API-de ja AI eeltöötluse.",
+    items: ["SQL ja PostgreSQL", "Andmete valideerimine", "API-d ja andmevahetus", "AI tuvastuse toeks"],
   },
   {
-    icon: AppWindow,
+    icon: FileCheck2,
     index: "03",
     title: "Sisemised tööriistad",
-    text: "Teen konkreetse ülesandega Pythoni tööriistu, töölauarakendusi ja lihtsaid veebivaateid.",
-    items: ["Python", "Töölauarakendused", "Sisemised veebivaated"],
-  },
-  {
-    icon: Plug,
-    index: "04",
-    title: "Süsteemide ühendamine",
-    text: "Panen olemasolevad töövahendid infot vahetama ning kasutan AI-d seal, kus see aitab infot tuvastada või eeltöödelda.",
-    items: ["API-d ja andmevahetus", "AI tööprotsessi toeks", "Inimese kontroll eranditele"],
+    text: "Teen konkreetse ülesandega töölauarakendusi ja veebivaateid, kus kindel töö liigub ise ja erandid jäävad inimesele.",
+    items: ["Töölauarakendused", "Sisemised veebivaated", "Kontrollkohad kasutajale"],
   },
 ];
 
@@ -100,34 +98,43 @@ function App() {
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#kontakt">
-                Räägi oma vajadusest <ArrowRight size={17} />
+                Räägi oma vajadusest <ArrowRight size={16} />
               </a>
-              <a className="button button-secondary" href="#lahendused">
-                Vaata, kuidas saan aidata
+              <a className="button button-secondary" href="#projektid">
+                Vaata tehtud töid
               </a>
             </div>
-            <div className="hero-principles" aria-label="Lahenduste põhimõtted">
-              <span><Settings2 size={16} /> Ei suuremat süsteemi kui vaja</span>
-              <span><Workflow size={16} /> Olemasolevad töövahendid enne uut</span>
-              <span><FileCheck2 size={16} /> Ebaselge tulemus inimesele</span>
-            </div>
+            <dl className="hero-stats" aria-label="Ülevaade">
+              <div>
+                <dt>Fookus</dt>
+                <dd>Praktilised töövood</dd>
+              </div>
+              <div>
+                <dt>Peamised</dt>
+                <dd>Python · SQL · React</dd>
+              </div>
+              <div>
+                <dt>Põhimõte</dt>
+                <dd>Väikseim toimiv lahendus</dd>
+              </div>
+            </dl>
           </div>
 
-          <div className="developer-workflow" aria-label="Näide praktilise automatiseerimise töövoost">
-            <div className="workflow-toolbar">
+          <figure className="workflow" aria-label="Näide praktilise automatiseerimise töövoost">
+            <figcaption className="workflow-toolbar">
               <span className="window-dots" aria-hidden="true"><i /><i /><i /></span>
               <code>workflow.py</code>
               <small>praktiline töövoog</small>
-            </div>
+            </figcaption>
             <div className="workflow-canvas">
-              <div className="workflow-step is-source">
+              <div className="workflow-step">
                 <span>01</span>
                 <div>
                   <strong>Leia päris ajakulu</strong>
                   <code>käsitöö · kordused · vead</code>
                 </div>
               </div>
-              <div className="workflow-line"><ArrowDown size={16} /></div>
+              <div className="workflow-connector" aria-hidden="true" />
               <div className="workflow-step is-action">
                 <span>02</span>
                 <div>
@@ -135,53 +142,54 @@ function App() {
                   <code>Python · SQL · API</code>
                 </div>
               </div>
+              <div className="workflow-connector is-fork" aria-hidden="true" />
               <div className="workflow-branch">
-                <div className="branch-question"><span>?</span> Kas tulemus on kindel?</div>
-                <div className="branch-options">
-                  <div><small>JAH</small><strong>Jätka olemasolevas süsteemis</strong></div>
-                  <div className="is-human"><small>EI</small><strong>Jäta inimesele kontrollida</strong></div>
+                <div className="branch-option">
+                  <small>Kindel</small>
+                  <strong>Jätka olemasolevas süsteemis</strong>
+                </div>
+                <div className="branch-option is-human">
+                  <small>Ebaselge</small>
+                  <strong>Jäta inimesele kontrollida</strong>
                 </div>
               </div>
-              <div className="workflow-note">
-                <CheckCircle2 size={17} />
-                <span><strong>Põhimõte:</strong> ehitan ainult selle, mida töö päriselt vajab.</span>
-              </div>
             </div>
-          </div>
+          </figure>
         </section>
 
-        <section id="tooviis" className="process-band">
-          <div className="section-shell process-section">
-            <div className="process-intro">
-              <SectionHeader eyebrow="Kuidas ma töötan" title="Probleemist toimiva tööriistani">
-                Enne arendamist tuleb aru saada, milline osa tööst vajab muutmist.
-                Tehnoloogia on vahend, mitte lähtekoht.
-              </SectionHeader>
-              <p className="process-callout">
-                Hea lahendus ei pea tegema kõike. See peab eemaldama kõige tüütuma
-                käsitöö ja jätma otsustamist vajavad kohad nähtavaks.
+        <section id="tooviis" className="approach-band">
+          <div className="section-shell approach-section">
+            <div className="approach-intro">
+              <span className="eyebrow">Kuidas ma töötan</span>
+              <h2>Neli põhimõtet, mille järgi lahenduse ehitan.</h2>
+              <p>
+                Ma ei alusta tehnoloogiast, vaid probleemist. Hea lahendus ei pea
+                tegema kõike — see peab eemaldama tüütuima käsitöö ja jätma
+                otsustamist vajavad kohad nähtavaks.
               </p>
             </div>
-            <ol className="process-steps">
-              {approachSteps.map((step) => (
-                <li key={step.title}>
-                  <span className="process-number" aria-hidden="true" />
+            <ul className="approach-list">
+              {approachPrinciples.map(({ icon: Icon, title, text }) => (
+                <li key={title}>
+                  <span className="approach-icon" aria-hidden="true">
+                    <Icon size={18} strokeWidth={1.8} />
+                  </span>
                   <div>
-                    <h3>{step.title}</h3>
-                    <p>{step.text}</p>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
                   </div>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
 
         <section id="lahendused" className="services-band">
           <div className="section-shell services-section">
-            <SectionHeader eyebrow="Milliseid lahendusi teen" title="Neli praktilist võimekust">
-              Lahendus võib olla väike skript, andmebaasipäring, sisemine veebivaade
-              või mitut süsteemi ühendav töövoog. Maht sõltub ülesandest.
-            </SectionHeader>
+            <div className="services-head">
+              <span className="eyebrow">Milliseid lahendusi teen</span>
+              <h2>Kolm valdkonda, üks eesmärk: vähem käsitööd.</h2>
+            </div>
             <div className="services-grid">
               {services.map((service) => (
                 <ServiceCard
@@ -195,51 +203,41 @@ function App() {
                 </ServiceCard>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section id="python" className="section-shell python-section">
-          <div className="python-heading">
-            <span className="eyebrow">Python ja õppimine</span>
-            <h2>Python praktiliste tööriistade loomiseks</h2>
-          </div>
-          <div className="python-copy">
-            <p>
-              Olen õppinud Pythonit ning kasutan seda automatiseerimise,
-              andmetöötluse ja praktiliste tööriistade loomiseks. Õppimine jätkub
-              projektide kaudu: uus tehniline võimalus on kasulik siis, kui oskan
-              selle siduda konkreetse töö ja arusaadava tulemusega.
-            </p>
-            <div className="python-tags" aria-label="Pythoni kasutusvaldkonnad">
-              <span>Failid ja dokumendid</span>
-              <span>Andmete kontroll</span>
-              <span>Automatiseerimine</span>
-              <span>Lihtsad kasutajavaated</span>
+            <div className="python-banner">
+              <div className="python-banner-icon" aria-hidden="true">
+                <GraduationCap size={20} />
+              </div>
+              <div className="python-banner-copy">
+                <strong>Python praktiliste tööriistade loomiseks</strong>
+                <p>
+                  Kasutan Pythonit automatiseerimiseks, andmetöötluseks ja
+                  tööriistade loomiseks. Õppimine jätkub projektide kaudu.
+                </p>
+              </div>
+              <a
+                className="button button-secondary python-banner-link"
+                href={certificateUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Vaata sertifikaati <ArrowUpRight size={15} />
+              </a>
             </div>
           </div>
-          <a
-            className="button button-secondary certificate-link"
-            href={certificateUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GraduationCap size={18} /> Vaata Pythoni sertifikaati
-          </a>
         </section>
 
         <section id="projektid" className="projects-band">
           <div className="section-shell projects-section">
-            <SectionHeader eyebrow="Valik tehtud lahendusi" title="Probleem, lihtsustus ja tulemus">
-              Kolm erineva mahuga näidet sellest, kuidas tehniline lahendus saab
-              konkreetset tööd vähem käsitsi tehtavaks muuta.
-            </SectionHeader>
-            <div className="projects-layout">
-              <ProjectCard project={projects[0]} featured />
-              <div className="secondary-projects">
-                {projects.slice(1).map((project) => (
-                  <ProjectCard key={project.title} project={project} compact />
-                ))}
-              </div>
+            <div className="projects-head">
+              <span className="eyebrow">Valik tehtud lahendusi</span>
+              <h2>Probleem, lihtsustus ja tulemus.</h2>
+            </div>
+            <FeaturedProject project={projects[0]} />
+            <div className="secondary-projects">
+              {projects.slice(1).map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
             </div>
           </div>
         </section>
@@ -257,22 +255,22 @@ function App() {
                 millistes kohtades tekib ajakulu või eksimisvõimalus.
               </p>
               <p>
-                Ma ei alusta tehnoloogiast, vaid probleemist. Kui ülesande saab
-                lahendada väikese automatiseeringu või olemasolevate vahendite
-                ühendamisega, ei ole põhjust ehitada suurt süsteemi.
+                Kui ülesande saab lahendada väikese automatiseeringu või
+                olemasolevate vahendite ühendamisega, ei ole põhjust ehitada suurt
+                süsteemi.
               </p>
+              <ul className="about-principles">
+                <li><CheckCircle2 size={16} /> Väikseim toimiv lahendus</li>
+                <li><CheckCircle2 size={16} /> Nähtavad erandid</li>
+                <li><CheckCircle2 size={16} /> Täiendused päris kasutusest</li>
+              </ul>
             </div>
-            <ul className="about-principles">
-              <li><CheckCircle2 size={17} /> Väikseim toimiv lahendus</li>
-              <li><CheckCircle2 size={17} /> Nähtavad erandid</li>
-              <li><CheckCircle2 size={17} /> Täiendused päris kasutusest</li>
-            </ul>
           </div>
         </section>
 
         <section id="kontakt" className="contact-band">
           <div className="section-shell contact-section">
-            <div>
+            <div className="contact-copy">
               <span className="eyebrow">Kontakt</span>
               <h2>Kas mõni tööetapp võtab liiga palju käsitööd?</h2>
               <p>
@@ -285,12 +283,12 @@ function App() {
               href="mailto:germo.eismann@example.com"
               aria-label="Kirjuta Germo Eismannile e-postiga"
             >
-              <Mail size={20} />
+              <Mail size={19} />
               <span>
                 <small>E-post</small>
                 germo.eismann@example.com
               </span>
-              <ArrowRight size={17} />
+              <ArrowRight size={16} />
             </a>
           </div>
         </section>
