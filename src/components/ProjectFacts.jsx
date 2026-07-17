@@ -1,13 +1,12 @@
-const fields = [
+const defaultFields = [
   ["problem", "Probleem"],
-  ["solution", "Lahendus"],
+  ["simplified", "Mida lahendus lihtsustas"],
   ["role", "Minu roll"],
-  ["result", "Tulemus"],
 ];
 
-export default function ProjectFacts({ project, className = "" }) {
+export default function ProjectFacts({ project, fields = defaultFields }) {
   return (
-    <dl className={`project-story ${className}`.trim()}>
+    <dl className="project-story">
       {fields.map(([key, label]) => (
         <div key={key}>
           <dt>{label}</dt>

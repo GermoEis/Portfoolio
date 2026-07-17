@@ -1,11 +1,11 @@
-# Germo Eismann - personaalne koduleht
+# Germo Eismann – rätseplahendused tööprotsessidele
 
-Professionaalne React + Vite koduleht, mis esitleb praktilisi tarkvarasüsteeme,
-dokumenditöötlust ja automatiseerimist. Leht ei ole CV ega portfoolio mall.
+Reacti ja Vitega tehtud personaalne veebileht, mis tutvustab tööprotsesside
+automatiseerimist, andmelahendusi ja praktilisi sisemisi tööriistu.
 
 ## Käivitamine
 
-Vajalik on Node.js 18 või uuem.
+Vajalik on Node.js 20.19 või uuem (või 22.12+).
 
 ```powershell
 npm.cmd install
@@ -25,14 +25,11 @@ Valmis ehitus luuakse kausta `dist`.
 
 ## Sisu muutmine
 
-- Dokumenditöötluse moodulid: `src/data/documentModules.js`
-- Muud projektid: `src/data/projects.js`
-- Päris ekraanipildid: `public/images`
-- Lehe sektsioonid: `src/App.jsx`
+- Lehe sektsioonid ja teenused: `src/App.jsx`
+- Projektinäited: `src/data/projects.js`
+- Projektikaart: `src/components/ProjectCard.jsx`
 - Kujundus: `src/styles.css`
-
-Ekraanipildid ei sisalda päris dokumente, paroole ega sisevõrgu aadresse. OCR-i
-vaade on jäädvustatud turvalise lokaalse konfiguratsiooniga.
+- Avalikud failid ja sertifikaat: `public`
 
 ## GitHub Pages
 
@@ -43,8 +40,11 @@ $env:VITE_BASE_PATH = "/repo-nimi/"
 npm.cmd run deploy
 ```
 
-Custom domeeni või kasutaja/organisatsiooni Pages repo puhul võib baasrada jääda `/`.
+Lehel kasutatavad pildid, näidis-PDF ja Pythoni sertifikaat arvestavad Vite'i
+`BASE_URL` väärtusega. Seetõttu töötavad lingid nii custom domeenil kui ka GitHub
+Pagesi repo alamteel.
 
 ## Enne avaldamist
 
-Asenda `src/App.jsx` failis kontaktiks olev näidisaadress päris e-postiga.
+Kontrolli `src/App.jsx` failis olev e-posti aadress üle ja asenda see vajadusel
+avaliku kontaktiaadressiga.

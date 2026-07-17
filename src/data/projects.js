@@ -1,47 +1,42 @@
-export const publicProject = {
-  title: "Räim Ruudus",
-  type: "Töötav avalik veebileht",
-  image: "/images/raim-ruudus-home.png",
-  imageAlt: "Räim Ruudus töötava veebilehe avaleht",
-  summary:
-    "Naissaare baari veebileht ja haldusvaade. Leht on avalik ning päriselt kasutuses.",
-  problem:
-    "Baari info, menüü, asukoht ja kontaktid olid vaja tuua ühte kohta. Sisu pidi saama muuta ilma lähtekoodi avamata.",
-  solution:
-    "Tegin Reacti ja Vitega veebilehe. Supabase hoiab muudetavat sisu ning GitHub Pages avaldab lehe. Lisatud on kohandatud domeen, PDF-menüü, SEO ja Google Analytics.",
-  role:
-    "Tegin kujunduse, kasutajaliidese, Supabase'i ühenduse ja admin-vaate. Seadistasin avaldamise, domeeni, analüütika ning otsingumootorite metaandmed.",
-  result:
-    "Veebileht töötab aadressil raimruudus.ee. Külastaja leiab vajaliku info ühest kohast ja haldaja saab sisu admin-vaates muuta.",
-  liveUrl: "https://www.raimruudus.ee/",
-  tags: ["React", "Vite", "Supabase", "GitHub Pages", "SEO", "Google Analytics"],
-};
-
-export const otherProjects = [
+export const projects = [
   {
-    title: "Kontopildi sorteerija",
-    type: "Sisemine automatiseerimine · Windows",
+    title: "Dokumenditöötluse töövoog",
+    type: "Sisemine töövahend · automatiseerimine",
+    image: "images/dokumenditootlus-launcher.png",
+    imageAlt: "Dokumenditöötluse rakenduse moodulite käivitusvaade",
     problem:
-      "Pildifailid saabuvad kausta ning kontonumber tuleb pildilt käsitsi leida. Seejärel tuleb kontrollida, kas konto on PostgreSQL-is või Excelis olemas, ja fail õigesse kohta tõsta.",
-    solution:
-      "Windowsi rakendus jälgib kausta, loeb kontonumbri lokaalse nägemismudeliga ning võrdleb tulemust andmeallikaga. Selge vaste liigub edasi, ebakindel tulemus jääb kontrollimiseks.",
+      "Mahukas skannipakk tuli käsitsi pöörata, tekstina tuvastada, dokumentideks jagada, metaandmetega siduda ja andmebaasiga võrrelda.",
+    simplified:
+      "Viis järjestikust tööetappi said ühise töövoo. Automaatika teeb põhitöö ning kasutaja kontrollib ainult erandeid ja ebaselgeid tulemusi.",
     role:
-      "Ehitasin WPF-i kasutajaliidese, kaustajälgija, töötlemisjärjekorra, lokaalse AI ühenduse ning PostgreSQL-i ja Exceli kontrollid.",
-    result:
-      "Faili liikumine ja kontrolli põhjus on kasutajale nähtav. Rakendus ei otsusta ebaselget juhtumit inimese eest ning kirjutab tegevused logisse.",
-    tags: [".NET 8", "WPF", "C#", "AI-nägemine", "PostgreSQL"],
+      "Kaardistasin protsessi ning ehitasin moodulid, kasutajavaated, kontrollireeglid, logid ja PostgreSQL-i uuendamise loogika.",
+    technologies: ["Python", "OCR", "Excel", "XML", "PostgreSQL", "SQL"],
+    supportingDocument: "documents/naidisdokument.pdf",
   },
   {
-    title: "Töövoo abitööriistad",
-    type: "Toetav tarkvaraarendus",
+    title: "Kontopildi sorteerija",
+    type: "Sisemine töövahend · Windows",
+    visualLabel: "Fail → tuvastus → kontroll → õige kaust",
     problem:
-      "Exceli, XML-i, PDF-i ja andmebaasi vahel korduvad samad väikesed kontrollid, ümbernimetamised ning vormingu muutmised.",
-    solution:
-      "Teen ühe ülesandega Pythoni tööriistu: failide kontroll, andmete võrdlus, XML-i muutmine, PDF-i töötlemine või tulemuse eksport.",
+      "Pildifaililt tuli käsitsi leida kontonumber, kontrollida selle olemasolu PostgreSQL-is või Excelis ning tõsta fail õigesse kausta.",
+    simplified:
+      "Rakendus jälgib sisendkausta, tuvastab numbri ja võrdleb tulemust andmeallikaga. Ebakindel tulemus jääb inimesele kontrollida.",
     role:
-      "Kaardistan käsitsi tehtavad sammud, kirjutan kontrollireeglid ja teen kasutajale lihtsa käivitusvaate või käsurea tööriista.",
-    result:
-      "Sama kontroll käib iga kord samade reeglite järgi. Vead ja vahele jäetud failid jäävad nähtavasse tulemusse, mitte ei kao vaikides ära.",
-    tags: ["Python", "Excel", "XML", "PDF", "Automatiseerimine"],
+      "Ehitasin kasutajaliidese, kaustajälgija, töötlemisjärjekorra, lokaalse AI ühenduse, andmekontrollid ja tegevuslogi.",
+    technologies: ["C#", ".NET 8", "WPF", "AI-nägemine", "PostgreSQL"],
+  },
+  {
+    title: "Räim Ruudus",
+    type: "Avalik veebilahendus",
+    image: "images/raim-ruudus-home.png",
+    imageAlt: "Räim Ruudus veebilehe avaleht",
+    problem:
+      "Baari info, menüü, asukoht ja kontaktid vajasid ühist veebivaadet ning sisu pidi saama muuta lähtekoodi avamata.",
+    simplified:
+      "Külastaja leiab vajaliku info ühest kohast. Haldaja saab menüüd ja muud sisu ise admin-vaates ajakohastada.",
+    role:
+      "Tegin kujunduse, kasutajaliidese, sisuhalduse ühenduse ja admin-vaate ning seadistasin avaldamise, domeeni, SEO ja analüütika.",
+    technologies: ["React", "Vite", "Supabase", "GitHub Pages", "SEO"],
+    liveUrl: "https://www.raimruudus.ee/",
   },
 ];
