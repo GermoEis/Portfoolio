@@ -33,12 +33,14 @@ Valmis ehitus luuakse kausta `dist`.
 
 ## GitHub Pages
 
-Repo alamteele avaldamisel määra Vite'i baasrada ja käivita avaldamine:
+`main` harusse push'imisel ehitab ja avaldab `.github/workflows/deploy-pages.yml`
+portfoolio automaatselt GitHub Pagesi aadressile:
 
-```powershell
-$env:VITE_BASE_PATH = "/repo-nimi/"
-npm.cmd run deploy
-```
+`https://germoeis.github.io/Portfoolio/`
+
+GitHubi hoidla seadetes peab **Settings → Pages → Source** väärtus olema
+**GitHub Actions**. Workflow määrab Vite'i baasrajaks `/Portfoolio/` ning lisab
+Formspree endpointi build-keskkonna kaudu.
 
 Lehel kasutatavad pildid, näidis-PDF ja Pythoni sertifikaat arvestavad Vite'i
 `BASE_URL` väärtusega. Seetõttu töötavad lingid nii custom domeenil kui ka GitHub
