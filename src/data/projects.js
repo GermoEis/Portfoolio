@@ -2,7 +2,7 @@ const sharedImages = {
   documentWorkflow: "images/dokumenditootlus-launcher.png",
   ocr: "images/ocr-module-sanitized.png",
   smartMeta: "images/smartmeta.png",
-  excel: "images/excel-control.png",
+  excel: "images/excel-control-blurred.png",
   raimRuudus: "images/raim-ruudus-home.png",
 };
 
