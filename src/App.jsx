@@ -14,7 +14,6 @@ import {
 import {
   base,
   certificateUrl,
-  contactEmail,
   siteContent,
 } from "./data/content.js";
 import { projectsByLanguage } from "./data/projects.js";
@@ -550,10 +549,6 @@ function App() {
               <span className="section-index">{copy.contact.index}</span>
               <h2>{copy.contact.title}</h2>
               <p>{copy.contact.text}</p>
-              <a className="contact-link" href={`mailto:${contactEmail}`}>
-                <span>{contactEmail}</span>
-                <ArrowUpRight size={26} />
-              </a>
             </div>
             <ContactForm copy={copy.contact.form} />
           </div>

@@ -1138,31 +1138,6 @@ p {
   line-height: 1.65;
 }
 
-.contact-link {
-  display: flex;
-  max-width: 720px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  margin-top: 42px;
-  padding: 20px 0;
-  border-top: 1px solid rgba(229, 242, 237, 0.35);
-  border-bottom: 1px solid rgba(229, 242, 237, 0.35);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(1.35rem, 3vw, 2.2rem);
-  transition: padding 150ms ease, color 150ms ease;
-}
-
-.contact-link svg {
-  flex: 0 0 auto;
-  transition: transform 150ms ease;
-}
-
-.contact-link:hover {
-  padding-inline: 9px;
-  color: var(--contact-hover);
-}
-
 @media (hover: hover) {
   .brand:hover {
     color: var(--accent);
@@ -1196,9 +1171,6 @@ p {
     transform: translateX(4px);
   }
 
-  .contact-link:hover svg {
-    transform: translate(2px, -2px);
-  }
 }
 
 .contact-form-panel {
@@ -1638,11 +1610,6 @@ body {
   overflow-wrap: break-word;
 }
 
-.contact-link span {
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
 .hero-trust {
   padding-bottom: 0;
 }
@@ -1664,10 +1631,6 @@ body {
     max-width: 18ch;
   }
 
-  .contact-link {
-    gap: 12px;
-    font-size: 1.2rem;
-  }
 }
 
 @media (max-width: 520px) {
@@ -1830,16 +1793,6 @@ body {
 
   .project-item-copy {
     padding-right: 35px;
-  }
-
-  .contact-link {
-    gap: 12px;
-    font-size: 1.18rem;
-  }
-
-  .contact-link span {
-    min-width: 0;
-    overflow-wrap: anywhere;
   }
 
   .contact-form-panel h3 {
@@ -3140,8 +3093,4 @@ body {
     max-width: 18ch;
   }
 
-  .contact-link {
-    gap: 12px;
-    font-size: 1.2rem;
-  }
 }

@@ -1,4 +1,4 @@
-# Germo Eismann – praktilised lahendused tööprotsessidele
+# Praktilised lahendused tööprotsessidele
 
 Reacti ja Vitega tehtud personaalne veebileht, mis tutvustab tööprotsesside
 automatiseerimist, andmelahendusi ja praktilisi sisemisi tööriistu.
