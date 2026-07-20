@@ -1,104 +1,284 @@
-import {
-  Boxes,
-  Database,
-  FileCheck2,
-  Recycle,
-  Scissors,
-  UserCheck,
-  Workflow,
-} from "lucide-react";
-import { projects } from "./projects.js";
-
-export { projects };
-
 export const base = import.meta.env.BASE_URL;
 export const certificateUrl = `${base}sertifikaat.pdf`;
 export const contactEmail = "germo.eismann@example.com";
 
-export const nav = [
-  { href: "#tooviis", label: "Kuidas töötan" },
-  { href: "#lahendused", label: "Lahendused" },
-  { href: "#projektid", label: "Tehtud tööd" },
-  { href: "#minust", label: "Minust" },
-  { href: "#kontakt", label: "Kontakt" },
-];
-
-export const hero = {
-  eyebrow: "Arendus · automatiseerimine · andmed",
-  title: "Rätseplahendused tööprotsesside lihtsustamiseks.",
-  lead: "Loon automatiseeringuid, andmelahendusi ja veebitööriistu tegeliku vajaduse järgi. Automatiseerin ainult selle osa, mis päriselt aega võtab — ilma üleliigsete funktsioonide ja ebavajaliku keerukuseta.",
-  stats: [
-    { label: "Fookus", value: "Praktilised töövood" },
-    { label: "Peamised", value: "Python · SQL · React" },
-    { label: "Põhimõte", value: "Väikseim toimiv lahendus" },
-  ],
+export const siteContent = {
+  et: {
+    meta: {
+      title: "Automaatika ja sisetarkvara ettevõtetele | Germo Eismann",
+      description: "Ehitan ettevõtetele automaatikat, sisetarkvara ja AI-toega lahendusi, mis vähendavad käsitööd ning muudavad tööprotsessid sujuvamaks.",
+    },
+    brandSubtitle: "Automation Engineer",
+    nav: [
+      { href: "#tooviis", label: "Kuidas töötan" },
+      { href: "#lahendused", label: "Mida lahendan" },
+      { href: "#projektid", label: "Projektid" },
+      { href: "#minust", label: "Minust" },
+      { href: "#kontakt", label: "Kontakt" },
+    ],
+    hero: {
+      eyebrow: "Ettevõtete sisetarkvara · töövood · rakenduslik AI",
+      title: "Ehitan automaatikat ja sisetarkvara,",
+      accent: "mis vähendab käsitööd, vigu ja ajakulu.",
+      lead: "Leian korduvast tööst kohad, kus tarkvara saab säästa aega, ühendada olemasolevad süsteemid ja vähendada veaohtlikku käsitööd. AI-d kasutan seal, kus see annab päriselt aega tagasi või aitab otsuseid kindlamalt teha.",
+      stats: [
+        { label: "Ehitan", value: "Töövoogude automaatikat · sisemisi tööriistu" },
+        { label: "Eesmärk", value: "Vähem käsitööd, parandusi ja ooteaega" },
+        { label: "Põhimõte", value: "Parandan olemasolevat, mitte ei asenda kõike" },
+      ],
+      primaryAction: "Kirjelda oma tööd",
+      secondaryAction: "Vaata lahendusi",
+      featuredProjectLink: "Vaata kõige mahukamat projekti →",
+      trustLabel: "Tööviisi põhimõtted",
+      trust: [
+        "Lahendan päris töö kitsaskohti, mitte demoülesandeid",
+        "Ehitan lahendusi, mida inimesed kasutavad iga päev",
+        "Alustan töö tegelikust käigust, mitte tehnoloogiast",
+      ],
+    },
+    process: {
+      index: "01 / Kuidas ma töötan",
+      title: "Kõigepealt vaatan, kuidas töö päriselt käib.",
+      lead: "Vaatan töö läbi koos inimesega, kes seda päriselt teeb. Nii selgub, kus aeg kaob, miks tekivad vead ja millise osa saab jätta tarkvara teha.",
+      principles: [
+        {
+          title: "Kaardistame töö tegeliku käigu",
+          text: "Võtame ühe tavapärase juhtumi ja käime selle algusest lõpuni läbi. Nii on näha, millised sammud korduvad, kus töö seisab ja mida peab hiljem parandama.",
+        },
+        {
+          title: "Valime suurima mõjuga koha",
+          text: "Kõike ei pea korraga ümber tegema. Alustan sammust, mille lahendamine säästab kõige rohkem aega või vähendab enim vigu.",
+        },
+        {
+          title: "Seon olemasoleva paremini kokku",
+          text: "Toimivad töövahendid jäävad alles. Vajadusel ehitan nende vahele automaatika või väikese sisemise rakenduse, mis teeb töövoo sujuvamaks.",
+        },
+        {
+          title: "Jätan kontrolli inimesele",
+          text: "Selged juhud liiguvad automaatselt. Erandid ja ebakindlad AI tulemused jõuavad inimesele otsustamiseks, mitte ei kao süsteemi sisse.",
+        },
+      ],
+    },
+    solutions: {
+      index: "02 / Milliseid probleeme aitan lahendada",
+      title: "Vähem korduvat tööd. Vähem vigu. Selgem töövoog.",
+      services: [
+        {
+          index: "01",
+          title: "Korduvad tööetapid võtavad liiga palju aega",
+          text: "Kui inimesed teevad päevast päeva samu sisestusi, kontrolle või failitoiminguid, ehitan töövoo, mis teeb kindlad sammud automaatselt ja suunab ainult erandid kontrolli.",
+          items: ["Korduvate sammude automaatika", "Automaatne kontroll ja suunamine", "Erandite selge käsitlemine", "Vähem käsitsi sisestamist"],
+        },
+        {
+          index: "02",
+          title: "Andmed ei liigu süsteemide vahel sujuvalt",
+          text: "Kui info tuleb mitmest allikast ja seda võrreldakse või sisestatakse käsitsi, ühendan vajalikud osad üheks töövooks. Nii jõuavad õiged andmed õigesse kohta ilma topelttööta.",
+          items: ["Süsteemide ühendamine", "Andmete automaatne võrdlemine", "Sujuv andmevahetus", "Üks selge tööjärjekord"],
+        },
+        {
+          index: "03",
+          title: "Olemasolev tarkvara jätab olulise töö käsitsi",
+          text: "Kui praegune lahendus katab osa protsessist, ehitan puuduva tööriista selle kõrvale. See võib olla sisemine veebivaade, töölauarakendus või AI-abimees — täpselt nii suur kui vaja.",
+          items: ["Sisemised tööriistad", "Töövoogu toetavad vaated", "AI seal, kus sellest on kasu", "Lahendus olemasoleva kõrvale"],
+        },
+      ],
+      pythonLabel: "Põhimõte / sobiv lahendus",
+      pythonText: "Tehnoloogia on vahend, mitte eesmärk. Valin võimalikult lihtsa lahenduse, mis sobib olemasoleva tööviisiga, on arusaadav ja jääb päriselt kasutusse.",
+      certificate: "Vaata täienduskoolituse tunnistust",
+    },
+    work: {
+      index: "03 / Lahendused päris töös",
+      title: "Kolm lahendust, mis vähendasid käsitööd.",
+      lead: "Need projektid algasid konkreetsest tööprobleemist: liiga palju korduvaid samme, käsitsi kontrolli või raskesti hallatavat infot. Lahendus kasvas vajaduse, mitte tehnoloogia ümber.",
+      featured: "Mahukaim siselahendus",
+      viewerLabel: "Lahenduse vaade",
+      previewLabel: "Valmis lahendus",
+      workflowLabel: "Automaatne töövoog",
+      facts: [
+        ["problem", "Lähteprobleem"],
+        ["system", "Lahendus"],
+        ["simplified", "Mõju tööle"],
+        ["role", "Minu vastutus"],
+      ],
+      samplePdf: "Vaata näidisdokumenti",
+      openWebsite: "Vaata valminud veebilehte",
+    },
+    projectCta: {
+      title: "Kas mõni tööetapp võiks liikuda ilma käsitööta?",
+      text: "Kirjelda, milline tegevus kordub, venib või vajab pidevalt parandamist. Vaatame koos, mida saab jätta tarkvara teha ja mis peaks jääma inimese otsustada.",
+      action: "Räägime sinu tööst",
+    },
+    about: {
+      index: "04 / Minust",
+      title: "Ehitan lahendusi selleks, et päris töö läheks lihtsamaks.",
+      paragraphs: [
+        "Jõudsin selle valdkonnani oma igapäevatöö kaudu. Nägin, kui palju aega kulub sammudele, mida tehakse harjumusest käsitsi, ning hakkasin ehitama lahendusi, mis võtavad selle koormuse inimestelt ära. Need on kasvanud päris vajadustest ja mõeldud igapäevaseks kasutamiseks, mitte demoks.",
+        "Mind huvitavad protsessid, kus info liigub mitme inimese või süsteemi vahel, kus sama tegevus kordub ja kus väike viga tekitab hiljem palju parandamist. Seal annab hästi tehtud sisetarkvara kõige selgema tulemuse.",
+        "Ma ei ehita uut süsteemi lihtsalt uue süsteemi pärast. Parim lahendus kasutab võimalusel olemasolevat, annab selged sammud tarkvarale ja jätab erandid inimesele. AI-d rakendan ainult siis, kui selle väärtus on kontrollitav ja tulemus jääb arusaadavaks.",
+      ],
+      principles: ["Alustan päris tööst", "Teen ainult vajaliku", "Hoian otsused kontrollitavad"],
+    },
+    contact: {
+      index: "05 / Kontakt",
+      title: "Räägi tööst, mis võtab inimestelt liiga palju aega.",
+      text: "Kui sinu ettevõttes kordub sama sisestamine, kontrollimine või info liigutamine, kirjelda mulle, kus töö kinni jääb. Vaatame koos, millist probleemi tasub kõigepealt lahendada, millise osa saab jätta tarkvara teha ja kus peab otsus jääma inimesele.",
+      form: {
+        title: "Kirjelda tööd, mida soovid lihtsustada",
+        help: "Kirjuta lühidalt, kuidas see praegu käib, kui sageli kordub ja kus tekib kõige rohkem ooteaega või vigu. Lahendust ei pea sa ette teadma.",
+        name: "Nimi",
+        email: "E-post",
+        message: "Mis töös aega võtab?",
+        submit: "Saada kirjeldus",
+        submitting: "Saadan...",
+        success: "Aitäh! Kirjeldus jõudis minuni. Vastan esimesel võimalusel.",
+        error: "Sõnumi saatmine ebaõnnestus. Palun proovi uuesti või kirjuta mulle otse e-posti aadressil.",
+      },
+    },
+    footer: "töövood · sisetarkvara · rakenduslik AI",
+    controls: {
+      language: "Vali keel",
+      skipToContent: "Liigu põhisisu juurde",
+      lightTheme: "Kasuta heledat režiimi",
+      darkTheme: "Kasuta tumedat režiimi",
+    },
+  },
+  en: {
+    meta: {
+      title: "Automation and internal software for business | Germo Eismann",
+      description: "I build automation, internal software and AI-assisted solutions that reduce manual work and make business processes run more smoothly.",
+    },
+    brandSubtitle: "automation and internal software",
+    nav: [
+      { href: "#tooviis", label: "How I work" },
+      { href: "#lahendused", label: "What I solve" },
+      { href: "#projektid", label: "Projects" },
+      { href: "#minust", label: "About" },
+      { href: "#kontakt", label: "Contact" },
+    ],
+    hero: {
+      eyebrow: "Automation · internal software · practical AI",
+      title: "I build software that reduces manual work",
+      accent: "and keeps business moving.",
+      lead: "I help businesses automate repetitive steps, connect the systems they already use and reduce error-prone manual work. I use AI where it genuinely saves time or helps people make more reliable decisions.",
+      stats: [
+        { label: "I build", value: "Workflow automation · internal tools" },
+        { label: "The goal", value: "Less manual work, rework and waiting" },
+        { label: "The principle", value: "Improve what works instead of replacing everything" },
+      ],
+      primaryAction: "Describe your workflow",
+      secondaryAction: "See the solutions",
+      featuredProjectLink: "Explore the largest automation project →",
+      trustLabel: "Working principles",
+      trust: [
+        "I solve bottlenecks in real work, not demo exercises",
+        "I build solutions people use every day",
+        "I start with how the work is done, not the technology",
+      ],
+    },
+    process: {
+      index: "01 / How I work",
+      title: "I start with the workflow, not the technology.",
+      lead: "I review the work with the person who actually does it. That shows where time is lost, why mistakes happen and which part is worth automating.",
+      principles: [
+        {
+          title: "Map the real workflow",
+          text: "We take one typical case and follow it from start to finish. That reveals which steps repeat, where work stalls and what has to be fixed later.",
+        },
+        {
+          title: "Choose the highest-impact step",
+          text: "There is no need to change everything at once. I start with the step where automation will save the most time or prevent the most mistakes.",
+        },
+        {
+          title: "Connect what already works",
+          text: "Useful tools stay in place. When needed, I add automation or a small internal application that connects them into a smoother workflow.",
+        },
+        {
+          title: "Keep people in control",
+          text: "Clear cases move automatically. Exceptions and uncertain AI results go to a person for review instead of disappearing inside the system.",
+        },
+      ],
+    },
+    solutions: {
+      index: "02 / What I can automate",
+      title: "Less repetition. Fewer mistakes. A clearer workflow.",
+      services: [
+        {
+          index: "01",
+          title: "Repetitive steps take up too much time",
+          text: "When people repeat the same entries, checks or file operations every day, I build a workflow that handles clear cases automatically and sends only exceptions for review.",
+          items: ["Repetitive task automation", "Automatic checks and routing", "Clear exception handling", "Less manual entry"],
+        },
+        {
+          index: "02",
+          title: "Information does not move smoothly between systems",
+          text: "When information comes from several sources and is compared or entered by hand, I connect the necessary parts into one workflow so the right data reaches the right place without duplicate work.",
+          items: ["Connecting existing systems", "Automatic data comparison", "Reliable data exchange", "One clear work queue"],
+        },
+        {
+          index: "03",
+          title: "Existing software leaves important work manual",
+          text: "When the current setup covers only part of the process, I build the missing tool alongside it. It may be an internal web view, a desktop application or an AI assistant — only as large as the job requires.",
+          items: ["Internal business tools", "Workflow-focused interfaces", "AI where it adds value", "Built around the existing setup"],
+        },
+      ],
+      pythonLabel: "Principle / practical value",
+      pythonText: "Technology is a tool, not the goal. I choose the simplest solution that fits the existing workflow, is easy to understand and will actually be used.",
+      certificate: "View training certificate",
+    },
+    work: {
+      index: "03 / Automation in real work",
+      title: "Three solutions that reduced manual work.",
+      lead: "Each project began with a specific workflow problem: too many repetitive steps, manual checks or information that was difficult to manage. The solution grew around the need, not the technology.",
+      featured: "Largest automation project",
+      viewerLabel: "Solution view",
+      previewLabel: "Finished solution",
+      workflowLabel: "Automated workflow",
+      facts: [
+        ["problem", "Starting problem"],
+        ["system", "Solution"],
+        ["simplified", "Business impact"],
+        ["role", "My responsibility"],
+      ],
+      samplePdf: "View sample document",
+      openWebsite: "View the finished website",
+    },
+    projectCta: {
+      title: "Could part of your workflow run without manual handling?",
+      text: "Describe the task that repeats, drags on or constantly needs fixing. We can decide what is worth automating and what should remain under human control.",
+      action: "Let’s discuss the workflow",
+    },
+    about: {
+      index: "04 / About",
+      title: "I build automation to make work genuinely easier.",
+      paragraphs: [
+        "I came to automation through my own day-to-day work. I saw how much time disappears into steps that are done manually out of habit, and started building solutions that take that burden away from people.",
+        "I am drawn to processes where information moves between several people or systems, the same action keeps repeating and a small mistake creates a great deal of rework later. That is where good internal software creates the clearest value.",
+        "I do not build a new system simply for the sake of having one. The best solution keeps what already works, automates clear cases and leaves exceptions to people. I use AI only when its value can be verified and its result remains understandable.",
+      ],
+      principles: ["Start with the workflow", "Build only what is needed", "Keep decisions understandable"],
+    },
+    contact: {
+      index: "05 / Contact",
+      title: "Tell me about the work that takes too much of your team’s time.",
+      text: "If your business repeatedly enters, checks or moves the same information, describe the process to me. We can identify what is worth automating and whether a small tool is enough or a broader internal solution is needed.",
+      form: {
+        title: "Describe the workflow you want to simplify",
+        help: "Tell me briefly how the work is done today, how often it repeats and where the most waiting or mistakes occur. You do not need to know the technical solution in advance.",
+        name: "Name",
+        email: "Email",
+        message: "What is taking up time?",
+        submit: "Send description",
+        submitting: "Sending...",
+        success: "Thank you! I received your description and will get back to you as soon as I can.",
+        error: "The message could not be sent. Please try again or email me directly instead.",
+      },
+    },
+    footer: "automation · internal software · practical AI",
+    controls: {
+      language: "Choose language",
+      skipToContent: "Skip to main content",
+      lightTheme: "Use light mode",
+      darkTheme: "Use dark mode",
+    },
+  },
 };
-
-export const approachPrinciples = [
-  {
-    icon: Scissors,
-    title: "Ehitan ainult vajaliku",
-    text: "Automatiseerin selle osa, mis päriselt aega võtab. Mugavad lisad jäävad ootele, kuni neid päriselt vaja on.",
-  },
-  {
-    icon: Recycle,
-    title: "Automatiseerin korduva töö",
-    text: "Käsitsi tehtavad kordused — kopeerimine, sisestamine, failide liigutamine — panen ühte selgesse töövoogu.",
-  },
-  {
-    icon: Boxes,
-    title: "Kasutan olemasolevaid vahendeid",
-    text: "Enne uue süsteemi ehitamist vaatan, mida juba kasutatakse, ja valin väikseima lahenduse, mis töö ära teeb.",
-  },
-  {
-    icon: UserCheck,
-    title: "Ebaselge jääb inimesele",
-    text: "Kindlad juhtumid liiguvad automaatselt edasi, ebaselged tulemused jäävad selgelt inimesele kinnitada.",
-  },
-];
-
-export const services = [
-  {
-    icon: Workflow,
-    index: "01",
-    title: "Automatiseerimine ja failitöö",
-    text: "Seon korduvad sammud üheks arusaadavaks töövooks — käsitsi sisestamine, kopeerimine ja failide liigutamine kaovad taustale.",
-    items: ["Korduvad tööetapid", "Excel, PDF ja XML", "Failide ja kaustade liikumine", "Pythoni tööriistad"],
-  },
-  {
-    icon: Database,
-    index: "02",
-    title: "Andmed ja kontroll",
-    text: "Korrastan sisendandmed, võrdlen neid reeglitega ning toon vead ja erandid selgelt välja — ka läbi API-de ja AI eeltöötluse.",
-    items: ["SQL ja PostgreSQL", "Andmete valideerimine", "API-d ja andmevahetus", "AI tuvastuse toeks"],
-  },
-  {
-    icon: FileCheck2,
-    index: "03",
-    title: "Sisemised tööriistad",
-    text: "Teen konkreetse ülesandega töölauarakendusi ja veebivaateid, kus kindel töö liigub ise ja erandid jäävad inimesele.",
-    items: ["Töölauarakendused", "Sisemised veebivaated", "Kontrollkohad kasutajale"],
-  },
-];
-
-export const about = {
-  eyebrow: "Minust",
-  title: "Protsessi mõistmine enne koodi.",
-  paragraphs: [
-    "Olen praktilise mõtlemisega arendaja. Mind huvitab enne koodi see, kuidas töö päriselt käib: kes seda teeb, millist infot on vaja ja millistes kohtades tekib ajakulu või eksimisvõimalus.",
-    "Kui ülesande saab lahendada väikese automatiseeringu või olemasolevate vahendite ühendamisega, ei ole põhjust ehitada suurt süsteemi.",
-  ],
-  principles: ["Väikseim toimiv lahendus", "Nähtavad erandid", "Täiendused päris kasutusest"],
-};
-
-export const contact = {
-  eyebrow: "Kontakt",
-  title: "Kas mõni tööetapp võtab liiga palju käsitööd?",
-  text: "Kirjelda mulle olukorda. Vaatan, kas seda saab mõistlikult lihtsustada või automatiseerida.",
-};
-
-export const featuredFacts = [
-  ["problem", "Probleem"],
-  ["simplified", "Mida lahendus lihtsustas"],
-  ["role", "Minu roll"],
-];
